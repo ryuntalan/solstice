@@ -1,0 +1,373 @@
+/*
+  === POSITIONING NOTES ===
+  To move the header/hero content up or down:
+    - Adjust the padding-top or margin-top on .hero or .hero-content.
+    Example: .hero { padding-top: 32px; }
+
+  To move the SVG background image up or down:
+    - Adjust the 'top' property on .hero-bg-wrapper (for absolute positioning inside .container).
+    Example: .hero-bg-wrapper { top: -50px; }
+    - Or add margin-top to .hero-bg if you want to nudge the SVG itself.
+*/
+:root {
+  --main-font: 'Mulish', sans-serif;
+  --mono-font: 'Roboto Mono', monospace;
+  --primary: #080808;
+  --secondary: #5D5F7A;
+  --accent: #eaeaf0;
+  --background: #F1F3F4;
+  --button-bg: #111;
+  --button-text: #fff;
+  --border: #5D5F7A;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  font-family: var(--main-font);
+  color: var(--primary);
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: auto;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  background: transparent;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo img {
+  height: 24px;
+  
+}
+.logo span {
+  font-family: var(--mono-font);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+nav {
+  display: flex;
+  gap: 36px;
+  font-size: 16px;
+}
+nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--secondary);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-actions a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 8px;
+}
+.get-started {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 2px;
+  padding: 10px 16px;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.get-started:hover {
+  background: #333;
+}
+.hero {
+  position: relative;
+  padding: 128px 0 56px 0;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.hero-bg-wrapper {
+  position: absolute;
+  top: -240px;
+  left: 0;
+  width: 100%;
+  height: 1280px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+.hero-bg {
+  width: 100%;
+  height: 1280px;
+  display: block;
+  background: transparent;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 56px;
+  max-width: 918px;
+  width: 100%;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 3.25rem;
+}
+.hero .subtitle {
+  font-size: 3rem;
+  color: var(--secondary);
+  font-weight: 400;
+  margin-top: -2px;
+  margin-bottom: 18px;
+}
+.hero .desc {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  max-width: 480px;
+}
+.hero .schedule-demo {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 2px;
+  padding: 12px 16px;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero .schedule-demo .material-symbols-outlined {
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+
+.hero .schedule-demo:hover {
+  background: #333;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 400px 0 0 0;
+}
+.signals-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0;
+  padding: 48px 0 64px;
+  gap: 48px;
+}
+.signals-left {
+  flex: 1 1 340px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.signals-left h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+.signals-left .subtitle {
+  color: var(--secondary);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: -12px;
+  margin-bottom: 18px;
+}
+.signals-left .desc {
+  color: var(--secondary);
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+.signals-left ul {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+  font-size: 1rem;
+  color: var(--secondary);
+  
+}
+.signals-left ul li {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  font-size: 1rem;
+}
+.signals-right {
+  flex: 1 1 480px;
+  max-width: 878px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.signals-right .graph-card {
+  background: #f3f3f6;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 878px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.signals-right .graph-card img {
+  width: 100%;
+  max-width: 878px;
+  border-radius: 4px;
+
+}
+.hero-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 32px;
+  gap: 32px;
+}
+.hero-row .desc {
+  max-width: 480px;
+  color: var(--secondary);
+  font-size: 1.25rem;
+}
+.hero-row .schedule-demo {
+  margin-left: auto;
+}
+.label-signal {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  margin-left: 0;
+  height: 16px;
+}
+@media (max-width: 1500px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 900px) {
+  .signals-section {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 16px 0 16px;
+  }
+  .hero-content {
+    padding: 0 16px;
+  }
+  header {
+    padding: 24px 16px 0 16px;
+  }
+  .hero-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .hero-row .schedule-demo {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .signals-section {
+    padding: 32px 8px 0 8px;
+  }
+  .signals-right .graph-card {
+    padding: 16px 8px 12px 8px;
+  }
+}
+.subtitle-carousel {
+  position: relative;
+  height: 2.6rem;
+  overflow: hidden;
+  perspective: 600px;
+  margin-top: -4px;
+  padding-bottom: 48px;
+}
+.subtitle-carousel .subtitle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(32px) translateX(32px) scale(0.96);
+  transition:
+    opacity 0.8s cubic-bezier(.5,0,.5,1),
+    transform 0.8s cubic-bezier(.5,0,.5,1);
+  will-change: opacity, transform;
+  color: var(--secondary);
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: left;
+  z-index: 1;
+}
+.subtitle-carousel .subtitle.active {
+  opacity: 1;
+  transform: translateY(0) translateX(0) rotateZ(0) scale(1);
+  z-index: 2;
+}
+.subtitle-carousel .subtitle.out {
+  opacity: 0;
+  transform: translateY(-32px) translateZ(-80px) scale(0.9);
+  z-index: 1;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; 
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+}
+
+.reveal-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 80%, var(--secondary) 0%, #fff0 10%),
+    url('data:image/svg+xml;utf8,<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><filter id="n" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" /></filter><rect width="400" height="400" filter="url(%23n)" opacity="0.18"/></svg>');
+  background-blend-mode: lighten, overlay;
+  opacity: 80;
+  mask-image: none;
+  -webkit-mask-image: none;
+  transition: opacity 0.3s, mask-image 0.2s, -webkit-mask-image 0.2s;
+} 
